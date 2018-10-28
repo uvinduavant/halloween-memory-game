@@ -1,9 +1,12 @@
 const cards = document.querySelectorAll('.memory-card');
+window.onload = function() {
+    document.getElementById("game-completed-modal").style.visibility = "hidden";
 
+};
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-
+let matchcount = 0;
 function flipCard() {
 	if (lockBoard) return;
 	if (this === firstCard) return;
@@ -35,8 +38,13 @@ function disableCards() {
 		// it's a match!
 		firstCard.removeEventListener('click', flipCard);
 		secondCard.removeEventListener('click', flipCard);
+		//Incrmeeting the whenever there is match.
+		matchcount++;
+		if(matchcount === 6)
+            document.getElementById("game-completed-modal").style.visibility = "visible";
+            //U can do Blur Out the Background color
 
-		resetBoard();
+    resetBoard();
 }
 
 function unflipCards() {
