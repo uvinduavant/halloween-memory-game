@@ -116,8 +116,7 @@ button {
 	margin-top: 4rem;
 }
 @keyframes animate {
-
-
+/*you can add animations here*/
 }
 .blur {
 	filter: blur(8px);
