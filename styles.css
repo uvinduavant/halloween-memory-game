@@ -1,0 +1,81 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/*height: 100vh;*/
+	display: flex;
+	background: url("img/seamless_halloween_print_10_by_doncabanza-d660tsc.jpg") no-repeat black;
+	background-size: 100%; 
+	overflow: hidden;
+}
+
+h1 { font-family: Arial, Helvetica, sans-serif; color: #666; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 25px; margin-top: 5px; }
+
+p { font-family: Arial, Helvetica, sans-serif; color: #666; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 14px; text-align: center;} 
+
+.wrapper {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+/*flex-item {
+	flex: 1;
+}
+
+flex-container {
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+*/
+.memory-game {
+	width: 600px;
+	height: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	perspective: 1000px;
+	min-height: calc(100vh);
+}
+
+.memory-card {
+	width: calc(25% - 10px);
+	height: calc(33.333%; -10px);
+	margin: 5px;
+	position: relative;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform .5s;
+}
+
+.memory-card:active {
+	transform: scale(.97);
+	transition: transform .2s;
+}
+
+.memory-card.flip {
+	transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	border-radius: 5px;
+	background: #699a32;
+	backface-visibility: hidden;
+}
+
+.front-face {
+	transform: rotateY(180deg);
+}
+
+.header, .footer {
+	height: 30px;
+	margin: auto;
+}
