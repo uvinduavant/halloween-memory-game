@@ -45,6 +45,7 @@ flex-container {
 	width: calc(25% - 10px);
 	height: calc(33.333%; -10px);
 	margin: 5px;
+	border-radius:5%;
 	position: relative;
 	transform: scale(1);
 	transform-style: preserve-3d;
