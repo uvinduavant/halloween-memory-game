@@ -1,13 +1,14 @@
 const cards = document.querySelectorAll('.memory-card');
-const congratulationsModal = document.getElementById('congratulations');
-const closeModal = document.getElementsByClassName("close")[0];
-const totalNumberOfCards = cards.length;
 
+window.onload = function() {
+    document.getElementById("game-completed-modal").style.visibility = "hidden";
+
+};
 let hasFlippedCard = false;
 let lockBoard = false;
 let numberOfFlippedCards = 0;
 let firstCard, secondCard;
-
+let matchcount = 0;
 function flipCard() {
 	if (lockBoard) return;
 	if (this === firstCard) return;
@@ -39,10 +40,14 @@ function disableCards() {
 		// it's a match!
 		firstCard.removeEventListener('click', flipCard);
 		secondCard.removeEventListener('click', flipCard);
-		numberOfFlippedCards += 2;
 
-		// all cards are flipped
-		numberOfFlippedCards == totalNumberOfCards ? congratulatePlayer() : resetBoard();
+		//Incrmeeting the whenever there is match.
+		matchcount++;
+		if(matchcount === 6)
+            document.getElementById("game-completed-modal").style.visibility = "visible";
+            //U can do Blur Out the Background color
+
+    resetBoard();
 }
 
 function unflipCards() {
