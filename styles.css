@@ -8,13 +8,13 @@ body {
 	/*height: 100vh;*/
 	display: flex;
 	background: url("img/seamless_halloween_print_10_by_doncabanza-d660tsc.jpg") no-repeat black;
-	background-size: 100%; 
+	background-size: 100%;
 	overflow: hidden;
 }
 
 h1 { font-family: Arial, Helvetica, sans-serif; color: #666; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 25px; margin-top: 5px; }
 
-p { font-family: Arial, Helvetica, sans-serif; color: #666; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 14px; text-align: center;} 
+p { font-family: Arial, Helvetica, sans-serif; color: #666; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 14px; text-align: center;}
 
 .wrapper {
 	margin: auto;
@@ -45,6 +45,7 @@ flex-container {
 	width: calc(25% - 10px);
 	height: calc(33.333%; -10px);
 	margin: 5px;
+	border-radius:5%;
 	position: relative;
 	transform: scale(1);
 	transform-style: preserve-3d;
@@ -79,6 +80,7 @@ flex-container {
 	height: 30px;
 	margin: auto;
 }
+
 #game-completed-modal {
 	top:300px;
 	left: 550px;

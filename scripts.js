@@ -1,10 +1,12 @@
 const cards = document.querySelectorAll('.memory-card');
+
 window.onload = function() {
     document.getElementById("game-completed-modal").style.visibility = "hidden";
 
 };
 let hasFlippedCard = false;
 let lockBoard = false;
+let numberOfFlippedCards = 0;
 let firstCard, secondCard;
 let matchcount = 0;
 function flipCard() {
@@ -38,6 +40,7 @@ function disableCards() {
 		// it's a match!
 		firstCard.removeEventListener('click', flipCard);
 		secondCard.removeEventListener('click', flipCard);
+
 		//Incrmeeting the whenever there is match.
 		matchcount++;
 		if(matchcount === 6)
@@ -72,6 +75,12 @@ function resetBoard () {
 	});
 })();
 
+function congratulatePlayer() {
+	congratulationsModal.style.display = "block";
+}
+
+closeModal.onclick = function() {
+    congratulationsModal.style.display = "none";
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-
