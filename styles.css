@@ -38,7 +38,8 @@ flex-container {
 	display: flex;
 	flex-wrap: wrap;
 	perspective: 1000px;
-	min-height: calc(100vh);
+	min-height: calc(79vh);
+	margin-top: 14%;
 }
 
 .memory-card {
